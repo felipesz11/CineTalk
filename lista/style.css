@@ -45,9 +45,16 @@ body {
 
 .listas {
     display: grid;
-    grid-template-columns: repeat(3, 350px); 
+    grid-template-columns: repeat(3, auto); 
     justify-content: space-between; 
     margin: 80px; 
+    border-bottom: 1px solid #d4c85c;
+    padding-bottom: 50px;
+}
+
+.listas > div:not(:last-child) {
+    border-right: 1px solid #d4c85c;
+    padding-right: 130px;
 }
 
 .listas img {
@@ -65,5 +72,29 @@ body {
     margin-top: 50px;
     color: #ffffff;
     font-size: 180%;
+    
 }
 
+/* Listas dos filmes */
+
+.recomendacao{
+display: grid;
+    grid-template-columns: repeat(3, 150px) auto repeat(3, 150px); 
+    align-items: center;
+    justify-content: space-between;
+    margin: 80px;
+
+}
+
+.recomendacao img {
+    width: 150px;
+    height: 200px;
+}
+
+.recomendacao h2{
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    font-size: 180%;
+    margin-bottom: 20px;
+}
