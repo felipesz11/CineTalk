@@ -41,6 +41,7 @@ body {
 .barra-navegacao nav a.ativo {
     color: #ffbd00;
 }
+
 /* Estilo para o título do cabeçalho */
 
 .botao1, .botao2 {
@@ -49,19 +50,29 @@ body {
     border: solid 6px white;
     border-radius: 50%;
     margin-top: 130px;
+    cursor: pointer;
 }
 
 .botao1 {
     transform: scaleX(-1);
 }
 
+.botao1:hover {
+    border-color: #ffbd00;
+}
+
+.botao2:hover {
+    border-color: #ffbd00;
+
+}
+
 .carrossel-listas {
     display: flex;
-    align-items: flex-start; /* Centraliza as setas no meio da altura da section */
+    align-items: flex-start; 
     justify-content: space-between;
     gap: 3px;
     margin: 80px 30px;
-    border-bottom: 1px solid #d4c85c; /* A linha amarela inferior agora fica aqui */
+    border-bottom: 1px solid #d4c85c; 
     padding-bottom: 50px;
 }
 
@@ -78,7 +89,7 @@ body {
     padding: 0 20px;
 }
 
-.listas > div:not(:last-child) {
+.listas > div:not(:nth-child(3)):not(:nth-child(6)) {
     border-right: 1px solid #d4c85c;
 }
 
@@ -97,10 +108,47 @@ body {
     margin-top: 50px;
     color: #ffffff;
     font-size: 180%;
-    
 }
 
+.oculto {
+    display: none !important;
+}
+
+
 /* Listas dos filmes */
+
+@keyframes deslizarDireita {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animação de deslize vindo da esquerda (quando clica na seta esquerda) */
+@keyframes deslizarEsquerda {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animar-direita {
+    animation: deslizarDireita 0.4s ease forwards;
+}
+
+.animar-esquerda {
+    animation: deslizarEsquerda 0.4s ease forwards;
+}
+
+/* Animaçao dde deslizar*/
 
 .recomendacao{
 display: grid;
@@ -123,3 +171,14 @@ display: grid;
     font-size: 180%;
     margin-bottom: 20px;
 }
+
+.listas > div, .recomendacao img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.listas > div:hover, .recomendacao img:hover {
+    transform: translateY(-6px);
+}
+
+/*Recomendação e deslize dos filmes*/
