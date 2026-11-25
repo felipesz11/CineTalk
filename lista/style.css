@@ -43,18 +43,43 @@ body {
 }
 /* Estilo para o título do cabeçalho */
 
+.botao1, .botao2 {
+    width: 40px; 
+    height: 40px;
+    border: solid 6px white;
+    border-radius: 50%;
+    margin-top: 130px;
+}
+
+.botao1 {
+    transform: scaleX(-1);
+}
+
+.carrossel-listas {
+    display: flex;
+    align-items: flex-start; /* Centraliza as setas no meio da altura da section */
+    justify-content: space-between;
+    gap: 3px;
+    margin: 80px 30px;
+    border-bottom: 1px solid #d4c85c; /* A linha amarela inferior agora fica aqui */
+    padding-bottom: 50px;
+}
+
 .listas {
     display: grid;
-    grid-template-columns: repeat(3, auto); 
-    justify-content: space-between; 
-    margin: 80px; 
-    border-bottom: 1px solid #d4c85c;
-    padding-bottom: 50px;
+    grid-template-columns: repeat(3, 1fr); 
+    flex: 1;
+}
+
+.listas > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza a imagem e o texto dentro de cada coluna */
+    padding: 0 20px;
 }
 
 .listas > div:not(:last-child) {
     border-right: 1px solid #d4c85c;
-    padding-right: 130px;
 }
 
 .listas img {
