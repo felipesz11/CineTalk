@@ -1,0 +1,195 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(40, 40, 40, 1);
+}
+
+.barra-navegacao {
+    height: 65px;
+    background-color: white;
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 35px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.barra-navegacao nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.barra-navegacao nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 19px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.barra-navegacao nav a:hover {
+    color: #ffbd00;
+}
+
+.barra-navegacao nav a.ativo {
+    color: #ffbd00;
+}
+
+/* Estilo para o título do cabeçalho */
+
+.botao1, .botao2 {
+    width: 40px; 
+    height: 40px;
+    border: solid 6px white;
+    border-radius: 50%;
+    margin-top: 130px;
+    cursor: pointer;
+}
+
+.botao1 {
+    transform: scaleX(-1);
+}
+
+.botao1:hover {
+    border-color: #ffbd00;
+}
+
+.botao2:hover {
+    border-color: #ffbd00;
+
+}
+
+.carrossel-listas {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: space-between;
+    gap: 3px;
+    margin: 80px 30px;
+    border-bottom: 1px solid #d4c85c; 
+    padding-bottom: 50px;
+}
+
+.listas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    flex: 1;
+}
+
+.listas > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza a imagem e o texto dentro de cada coluna */
+    padding: 0 20px;
+}
+
+.listas > div:not(:nth-child(3)):not(:nth-child(6)) {
+    border-right: 1px solid #d4c85c;
+}
+
+.listas img {
+    width: 320px;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    border: 22px solid rgba(30, 30, 30, 1);
+    border-radius: 4%;
+    transition: outline 0.3s ease;
+}
+
+.listas p {
+    text-align: center;
+    margin-top: 50px;
+    color: #ffffff;
+    font-size: 180%;
+}
+
+.oculto {
+    display: none !important;
+}
+
+
+/* Listas dos filmes */
+
+@keyframes deslizarDireita {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animação de deslize vindo da esquerda (quando clica na seta esquerda) */
+@keyframes deslizarEsquerda {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animar-direita {
+    animation: deslizarDireita 0.4s ease forwards;
+}
+
+.animar-esquerda {
+    animation: deslizarEsquerda 0.4s ease forwards;
+}
+
+/* Animaçao dde deslizar*/
+
+.recomendacao{
+    display: grid;
+    grid-template-columns: repeat(3, 150px) auto repeat(3, 150px); 
+    align-items: center;
+    justify-content: space-between;
+    margin: 80px;
+
+}
+
+.recomendacao img {
+    width: 150px;
+    height: 200px;
+    transition: outline 0.3s ease;
+
+}
+
+.recomendacao h2{
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    font-size: 180%;
+    margin-bottom: 20px;
+}
+
+.listas > div, .recomendacao img {
+    transition: transform 0.3s ease;
+}
+
+.listas > div:hover, .recomendacao img:hover {
+    transform: translateY(-6px);
+}
+.recomendacao img:hover{
+    outline: 4px solid #d4c85c ;
+
+}
+
+.listas img:hover{
+    cursor: pointer;
+    outline: 4px solid #d4c85c ;
+
+}
+
+/*Recomendação e deslize dos filmes*/
