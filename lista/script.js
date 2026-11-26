@@ -21,7 +21,7 @@ function trocarListas(direcao) {
             // Remove a classe de animação pro hover funcionar
             setTimeout(() => {
                 card.classList.remove(classeAnimacao);
-            }, 400);
+            }, 250);
         }
     });
 }
@@ -45,4 +45,4 @@ botaoDireita.addEventListener('click', () => trocarListas('direita'));
 botaoEsquerda.addEventListener('click', () => trocarListas('esquerda'));
 
 // Girar as ft
-setInterval(trocarRecomendacoesAutomatico, 15000);
+setInterval(trocarRecomendacoesAutomatico, 12000);
